@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { AppRegistry, Text, View } from 'react-native';
-
+import Component1  from './components/Component1/Component1';
 export default class myapp extends Component {
   render() {
     return (
@@ -8,13 +8,8 @@ export default class myapp extends Component {
         <Text>
           Welcome to JLab
         </Text>
-        <Text>
-          To get started, edit index.android.js
-        </Text>
-        <Text>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
+       
+        <Component1 message="hello world"/>
       </View>
     );
   }
