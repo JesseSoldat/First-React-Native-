@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, Text, View, TextInput } from 'react-native';
+import { AppRegistry, Text, View, TextInput, Switch } from 'react-native';
 
 
 export default class component3 extends Component {
@@ -7,8 +7,24 @@ export default class component3 extends Component {
     super(props);
   
     this.state = {
-      textValue: 'Hello'
+      textValue: 'Hello',
+      switchValue: false
     };
+  }
+
+  onChangeText(value){
+    this.setState({
+      textValue: value
+    })
+  }
+
+  onSubmit(){
+    console.log('entered')
+  }
+  onSwitchChange(value){
+    this.setState({
+      switchValue: value
+    })
   }
   render() {
     return (
@@ -18,7 +34,13 @@ export default class component3 extends Component {
         </Text>
         <TextInput 
           placeholder="Enter Text"
-          value={this.state.textValue}/>
+          value={this.state.textValue}
+          onChangeText={(value) => this.onChangeText(value)}
+          onSubmitEditing={this.onSubmit}/>
+        <Text>{this.state.textValue}</Text>
+        <Switch 
+          value={this.state.switchValue}
+          onValueChange={(value) => this.onSwitchChange(value)}/>
       </View>
     );
   }
